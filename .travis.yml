@@ -91,6 +91,17 @@ script:
 after_failure:
   - ./extra/travis/debug_failure.sh
 
+deploy:
+  provider: releases
+  api_key:
+    secure: FHa5du1d5BJt1/ezSnPF7jjMy815RwoNyadCxgWiySTTBBtbZbc4hBWYkto6t94LNmvL7i/fJoRW3IYgX8l8yoQFiztQn708dfO344R/ZGYBur/5gV3v/b60dGDKBL2X68NWb0U3IN1qAT9bsFkdpmkdDbEdE9QTHrK9gZ59skrPS09wVEbwMXvZiliD3/mRR8QtuBb7UWcbpFashINBOm1MsqRJuXnuQIEEuuNX4eyLdJzxphv2uBIWOUFki2/5VEEYh+vrteFiWYBD5N0AvOCe+oZkQWeKX61YAagrinqeg0PwJODyEqsjwBUROiF24bFObVBn0S6sUBEkSKhoMBaN8bW7pmY8ocRHLnE+YBmucxmWz3Tl3zpri2tJ7QEaYRZHKoGGOvRi6fEh5WhI5mJjLGfsUJiUiE2GCD31HJuNrLd0ak2nfKS/tamH5NeDrEXUChuLmE+nowidG8qYwQxHV33ZmxtZYJa05+mu5xXrUSsfJrH074Paw8q16rbTnirEWC3iBdh8Qrofbjf2ekl2skVctlNwpUn/Umtl04F8h6KKtRatqkTVcBSx0iwgnerGSyudb/KBp9gLTyxx4B+vnft7WNVJSfvPTi7phabpknMeBB3yFW8PGtGuEDg0YUYI0XjoM8wcF92B0jNA5JnKVXXkreafb3DjNisXfbg=
+  file: "*.dmg"
+  file_glob: true
+  skip_cleanup: true
+  overwrite: true
+  on:
+    repo: publicarray/uTox
+    tags: true
 
 notifications:
   email: false
