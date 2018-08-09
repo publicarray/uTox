@@ -1,8 +1,10 @@
 #/usr/bin/env zsh
 
+LIBVPX_VERSION="1.7.0"
+
 # install libvpx, needed for video encoding/decoding
 if ! [ -d libvpx ]; then
-  git clone --depth=1 --branch=v1.6.0 https://chromium.googlesource.com/webm/libvpx
+  git clone --depth=1 --branch=v${LIBVPX_VERSION} https://chromium.googlesource.com/webm/libvpx
 fi
 cd libvpx
 git rev-parse HEAD > libvpx.sha
