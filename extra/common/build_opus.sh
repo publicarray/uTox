@@ -1,4 +1,4 @@
-#/usr/bin/env zsh
+#!/usr/bin/env bash
 
 OPUS_VERSION="1.2.1"
 
@@ -11,7 +11,7 @@ if ! [ -f "$CACHE_DIR/usr/lib/pkgconfig/opus.pc" ]; then
               --prefix="$CACHE_DIR/usr" \
               --disable-extra-programs \
               --disable-doc
-  make -j`nproc`
+  make -j"$(sysctl -n hw.ncpu)"
   make install
   cd ..
   rm -rf opus**

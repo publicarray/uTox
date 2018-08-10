@@ -1,5 +1,4 @@
-#/usr/bin/env zsh
-#
+#!/usr/bin/env bash
 
 # openal is a windows thing, just fyi
 

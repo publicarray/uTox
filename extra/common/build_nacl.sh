@@ -1,4 +1,4 @@
-#/usr/bin/env zsh
+#!/usr/bin/env bash
 
 # install libsodium, needed for crypto
 if ! [ -d libsodium ]; then
@@ -10,7 +10,7 @@ if ! ([ -f "$CACHE_DIR/libsodium.sha" ] && diff "$CACHE_DIR/libsodium.sha" libso
   ./autogen.sh
   ./configure "$TARGET_HOST" \
               --prefix="$CACHE_DIR/usr"
-  make -j`nproc`
+  make -j"$(sysctl -n hw.ncpu)"
   make install
   mv libsodium.sha "$CACHE_DIR/libsodium.sha"
 fi

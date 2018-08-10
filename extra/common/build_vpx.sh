@@ -1,4 +1,4 @@
-#/usr/bin/env zsh
+#!/usr/bin/env bash
 
 LIBVPX_VERSION="1.7.0"
 
@@ -16,7 +16,7 @@ if ! ([ -f "${CACHE_DIR}/libvpx.sha" ] && diff "${CACHE_DIR}/libvpx.sha" libvpx.
               --disable-examples \
               --disable-unit-tests \
               --disable-shared
-  make -j`sysctl -n hw.ncpu`
+  make -j"$(sysctl -n hw.ncpu)"
   make install
   mv libvpx.sha "${CACHE_DIR}/libvpx.sha"
 fi

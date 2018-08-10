@@ -1,12 +1,7 @@
-dist: precise
-sudo: false
-
 language: c
 
 addons:
   apt:
-    sources:
-       - george-edison55-precise-backports # cmake 3.2.3
     packages:
       - cmake
       - cmake-data
@@ -17,10 +12,6 @@ addons:
       - libopenal-data
       - libopenal1
       - libv4l-dev
-      - mingw-w64
-      - mingw-w64-dev
-      - binutils-mingw-w64
-      - gcc-mingw-w64
 
 cache:
   directories:
